@@ -36,7 +36,7 @@ export class AppComponent implements OnInit{
       enteries.forEach( entry => {
         if(entry.isIntersecting){
           let element = entry.target as HTMLElement;
-          element.style.animation = 'fade-left 1s ease-in-out normal';
+          element.style.animation = 'fade-left 1.2s ease-in-out normal';
         }
       })
     }, options);
@@ -53,7 +53,7 @@ export class AppComponent implements OnInit{
       enteries.forEach( entry => {
         if(entry.isIntersecting){
           let element = entry.target as HTMLElement;
-          element.style.animation = 'fade-right 1s ease-in-out normal';
+          element.style.animation = 'fade-right 1.2s ease-in-out normal';
         }
       })
     }, options);
