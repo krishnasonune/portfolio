@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #252525;
+        }
+
+        .container{
+            height: 80vh;
+            width: 70vw;
+            margin-top: 10vh;
+            margin-left: 10vw;
+            position: absolute;
+            background-image: url('https://images.pexels.com/photos/13039734/pexels-photo-13039734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .box1{
+            height: 40vh;
+            width: 20vw;
+            position: relative;
+            left: 20%;
+            top: 20%;
+            z-index: 2;
+            background-image: url('https://images.pexels.com/photos/14146979/pexels-photo-14146979.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .box2{
+            height: 40vh;
+            width: 20vw;background-image: url('https://images.pexels.com/photos/13037261/pexels-photo-13037261.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 8;      
+        }
+
+        .box3{
+            height: 40vh;
+            width: 20vw;background-image: url('https://images.pexels.com/photos/14113084/pexels-photo-14113084.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            top: -10%;
+            left: -20%;
+            z-index: 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

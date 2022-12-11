@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 40px;
+}
+
+.projcontainer{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.project-description{
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item1{
+    height: 50vh;
+    width: 50vw;
+}
+
+.item1 img{
+    height: 50vh;
+    width: 50vw;
+}
+
+.item2{
+    height: 50vh;
+    width: 50vw;
+}
+
+.project-text{
+    margin: 13vh 2vw;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.title{
+    font-size: 2em;
+}
+
+.description{
+    font-size: 1.2em;
+}
+
+.projimgtrans, .projdesctrans{
+    
+}
+
+/* ===========================ANIMATIONS================================ */
+
+
+@keyframes objFromLeft {
+    0%{
+        transform: translateX(-70vw);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.4;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes objFromRight {
+    0%{
+        transform: translateX(+70vw);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.4;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+/* ===========================ANIMATIONS================================ */
+
+@media screen and (max-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .projcontainer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.5);
+    }
+    
+    .project-description{
+        height: 80vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .item1{
+        height: 50vh;
+        width: 100vw;
+    }
+    
+    .item1 img{
+        height: 50vh;
+        width: 100vw;
+    }
+    
+    .item2{
+        height: 30vh;
+        width: 100vw;
+    }
+    
+    .project-text{
+        margin: 5vh 2vw;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+    }
+    
+    .title{
+        font-size: 1em;
+    }
+    
+    .description{
+        font-size: 0.7em;
+    }
+
+    .anim{
+        animation: fade-down 5s ease-in-out normal;
+    }
+
+    /* ===========================ANIMATIONS================================ */
+
+    @keyframes fade-down {
+        from{
+            transform: translateY(-50vw);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0vw);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-left {
+        from{
+            transform: translateX(-100vw);
+        }
+        to{
+            transform: translateY(0vw);
+        }
+    }
+
+    @keyframes fade-right {
+        from{
+            transform: translateX(+100vw);
+        }
+        to{
+            transform: translateX(0vw);
+        }
+}
+
+/* ===========================ANIMATIONS================================ */
+
+}

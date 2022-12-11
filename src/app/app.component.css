@@ -1,0 +1,460 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    max-width: 100vw;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+header::before{
+    content: '';
+    background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    animation: fade-down 1.7s ease-in-out normal;
+}
+
+.box1 nav ul li{
+    padding: 1rem;
+    display: inline-block;
+    list-style: none;
+}
+
+.box1 nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.box1 nav ul li a:hover{
+    transition: ease-in-out;
+    color: cadetblue;
+}
+
+.box2 span{
+    display: none;
+}
+
+.homecontainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting-main-page{
+    display: flex;
+    flex-direction: row;
+    margin: 10vh;
+    height: 80vh;
+    width: 80vw;
+}
+
+.greet-1{
+    width: 40vw;
+    height: 80vh;
+    animation: fade-left 2s ease-in-out normal;
+}
+
+.greeting-text{
+    display: block;
+    text-align: center;
+    margin: 15vh 5vh;
+    font-size: 20px;
+}
+
+.title{
+    font-size: 1.3em;
+    margin-bottom: 0.3vh;
+}
+
+.profession{
+    font-size: 1.3em;
+    margin-bottom: 0.3vh;
+}
+
+.description{
+    font-size: 1.2em;
+    margin-bottom: 0.3vh;
+    line-height: 24px;
+}
+
+.social-media{
+    padding: .2vw;
+    margin-bottom:0.3vh ;
+}
+
+.social-media:hover{
+    transform: rotateZ(360deg);
+    transition: ease-in-out .5s;
+}
+
+.greet-2{
+    width: 40vw;
+    height: 80vh;
+    animation: fade-right 2s ease-in-out normal;
+}
+
+.greet-2 img{
+    width: 40vw;
+    height: 80vh;
+}
+
+footer{
+    max-width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.footercontainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 20px;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.footerbox1{
+    margin: 6vh;
+}
+
+.footerbox1 a{
+    color: white;
+}
+
+.footerbox1 h1{
+    font-size: 1.2em;
+    margin-bottom: 0px;
+}
+
+.footerbox1 h3{
+    font-size: 1em;
+    margin-bottom: 0px;
+}
+
+.alignIcons{
+
+    padding :1vh;
+}
+
+.alignIcons:hover{
+    transform: rotateZ(360deg);
+    transition: ease-in-out .5s;
+}
+
+.animatebtn:hover{
+    background-color: cadetblue;
+    color: #252525;
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) .2s;
+}
+
+footer p{
+    font-size: 1.2em;
+    text-align: center;
+    padding: 1vh;
+    margin-bottom: 0px;
+}
+
+/* ==========================ANIMATIONS================================== */
+
+@keyframes fade-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-100vw);
+    }
+    50%{
+        opacity: 0.4;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0vw);
+    }
+}
+
+@keyframes fade-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    
+    50%{
+        opacity: 0.4;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes fade-right {
+    0%{
+        opacity: 0;
+        transform: translateX(+100vw);
+    }
+    50%{
+        opacity: 0.4;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+}
+
+/* ==========================ANIMATIONS================================== */
+
+
+/* mobile layout responsive ness */
+
+@media screen and (max-width: 768px) {
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header{
+        max-width: 100vw;
+        color: white;
+        background-color: rgba(0,0,0,0.5);
+    }
+    
+    header::before{
+        content: '';
+        background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.4;
+    }
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        animation: fade-down 1s ease-in-out normal;
+    }
+
+    #ul{
+        display: none;
+    }
+
+    #ul.show{
+        display: block;
+    }
+
+    .box1 nav ul li{
+        display: block;
+        animation: slide .5s ease-in-out normal;
+    }
+
+    .box2 span{
+        padding: 1rem;
+        display: block;
+    }
+    
+    .homecontainer{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    .greeting-main-page{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        margin: 4vh;
+        height: 80vh;
+        width: 80vw;
+    }
+    
+    .greet-1{
+        width: 80vw;
+        height: 40vh;
+        animation: fade-left 1s ease-in-out normal;
+    }
+    
+    .greeting-text{
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        margin: 2vh .5vh;
+    }
+    
+    .title{
+        font-size: .9em;
+        margin-bottom: 0.2vh;
+    }
+    
+    .profession{
+        font-size: .9em;
+        margin-bottom: 0.2vh;
+    }
+    
+    .description{
+        font-size: 0.7em;
+        line-height: 20px;
+        margin-bottom: 0.2vh;
+    }
+    
+    .social-media{
+        padding: .1vw;
+        height: 2em;
+        margin-bottom: 0.2vh;
+    }
+    
+    .social-media:hover{
+        transform: rotateZ(360deg);
+        transition: ease-in-out .5s;
+    }
+
+    .greet-2{
+        width: 80vw;
+        height: 40vh;
+        animation: fade-right 1s ease-in-out normal;
+    }
+
+    .greet-2 img{
+        width: 80vw;
+        height: 40vh;
+    }
+    
+    @keyframes slide {
+        0%{
+            transform: translateX(-50vw);
+        }
+        100%{
+            transform: translateX(0vw);
+        }
+    }
+
+    footer{
+        max-width: 100vw;
+        font-size: 20px;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+    }
+    
+    .footercontainer{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footerbox1{
+        margin: 4vh;
+        display: block;
+    }
+
+    .footerbox1 h1{
+        font-size: 1em;
+        margin: 0px;
+    }
+    .footerbox1 a{
+        color: white;
+    }
+    
+    .footerbox1 h3{
+        font-size: .8em;
+        margin: 0px;
+    }
+
+    .alignIcons{
+        padding: .3vw;
+        height: 2em;
+    }
+    
+    .alignIcons:hover{
+        transform: rotateZ(360deg);
+        transition: ease-in-out .5s;
+    }
+
+    
+    .animatebtn:hover{
+        background-color: cadetblue;
+        color: #252525;
+        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) .2s;
+    }
+    
+    footer p{
+        text-align: center;
+        font-size: 0.8em;
+        padding: 1vh;
+        margin-bottom: 0px;
+    }
+    
+    /* ==========================ANIMATIONS================================== */
+
+    @keyframes fade-down {
+        from{
+            opacity: 0;
+            transform: translateY(-100vw);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0vw);
+        }
+    }
+
+    @keyframes fade-left {
+        from{
+            opacity: 0;
+            transform: translateX(-100vw);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0vw);
+        }
+    }
+
+    @keyframes fade-right {
+        from{
+            opacity: 0;
+            transform: translateX(+100vw);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0vw);
+        }
+    }
+
+/* ==========================ANIMATIONS================================== */
+
+    
+}
+
