@@ -48,10 +48,12 @@ html{
 
 .title{
     font-size: 2em;
+    padding-bottom: 10px;
 }
 
 .description{
     font-size: 1.2em;
+    line-height:normal;
 }
 
 .projimgtrans, .projdesctrans{
@@ -144,14 +146,12 @@ html{
     
     .title{
         font-size: 1em;
+        padding-bottom: 10px;
     }
     
     .description{
         font-size: 0.7em;
-    }
-
-    .anim{
-        animation: fade-down 5s ease-in-out normal;
+        line-height: normal;
     }
 
     /* ===========================ANIMATIONS================================ */
