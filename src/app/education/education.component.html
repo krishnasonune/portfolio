@@ -1,0 +1,33 @@
+<section class="education-section">
+    <div class="education-image-box">
+        <img src="assets/education.svg" data-aos="fade-up" alt="loading...." class="education-image">
+    </div>
+    <div class="education-text-content" data-aos="fade-up">
+        <h1 class="education-title">Education & Certifications</h1>
+        <p class="education-subtitle">My education journey: a captivating tale of curiosity, growth, and relentless pursuit of knowledge. Join me as I reflect on memorable projects, transformative moments, and the passion that drives me to excel.</p>
+        <div class="coding-platform-box">
+            <img src="assets/skills_icons/leetcode.svg" (click)="NewTab.openNewTab(NewTab.leetcode)" alt="loading...." class="platform-image">
+            <img src="assets/skills_icons/hackerrank.svg" (click)="NewTab.openNewTab(NewTab.hackerrank)" alt="loading...." class="platform-image">
+        </div>
+    </div>
+</section>
+
+<section class="Degrees">
+    <div class="title">
+        <h1 class="degree-title">Degrees Received</h1>
+    </div>
+    <div class="degree-cards" data-aos="fade-up" *ngFor="let degree of degrees">
+        <app-education-card [EducationDetails]="degree"></app-education-card>
+    </div>
+</section>
+
+<section class="certifications">
+    <div class="c-title">
+        <h1 class="degree-title" data-aos="fade-up" >Certifications</h1>
+    </div>   
+
+    <div class="certification-cards" data-aos="flip-left" *ngFor="let certificate of certifications">
+        <app-certification-card [certificates]="certificate"></app-certification-card>
+    </div>
+</section>
+

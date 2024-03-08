@@ -1,0 +1,15 @@
+<section class="education-card">
+    <span class="heading">
+        <h2 class="degree-from">{{EducationDetails?.degree_from}}</h2>
+        <div class="degree-align">
+            <h3 class="degree-title">{{EducationDetails?.degree_title}}</h3>
+            <h3 class="degree-period">{{EducationDetails?.degree_period}}</h3>
+        </div>
+    </span>
+
+    <span class="degree-details">
+        <div *ngFor="let point of EducationDetails?.degree_description">
+            <p class="points">⚡{{point}}</p>
+        </div>
+    </span>
+</section>

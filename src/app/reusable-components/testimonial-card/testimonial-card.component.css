@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host {
+    --card-color: #70b8f7;
+    --color: #F8F8F7;
+    --card-hover-color: #334c63;
+    --card-text-color: #1c365c;
+    --max-lines: 3;
+}
+
+.test-card {
+    background-color: var(--card-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.test-card:hover {
+    filter: drop-shadow(5px 5px 20px var(--card-hover-color));
+}
+
+
+.tag-line {
+    font-size: 3rem;
+    font-family: sans-serif;
+}
+
+.symbol {
+    font-size: 4rem;
+}
+
+.user-experience {
+    font-size: 1.8rem;
+    font-family: 'Hind', sans-serif;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+
+
+.user-box {
+    width: 100%;
+    display: flex;
+    gap: 0 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.name,
+.title {
+    font-size: 1.7rem;
+    font-family: 'Hind', sans-serif;
+}
+
+
+.image-box {
+    width: 10%;
+}
+
+.avatar {
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .tag-line {
+        font-size: 2.8rem;
+    }
+
+    .symbol {
+        font-size: 3.8rem;
+    }
+
+    .user-experience {
+        font-size: 1.7rem;
+    }
+
+    .name,
+    .title {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tag-line {
+        font-size: 3rem;
+    }
+
+    .symbol {
+        font-size: 4rem;
+    }
+
+    .user-experience {
+        font-size: 1.8rem;
+    }
+
+    .name,
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tag-line {
+        font-size: 2.75rem;
+    }
+
+    .symbol {
+        font-size: 3.75rem;
+    }
+
+    .user-experience {
+        font-size: 1.7rem;
+    }
+
+    .name,
+    .title {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tag-line {
+        font-size: 2.65rem;
+    }
+
+    .symbol {
+        font-size: 3.55rem;
+    }
+
+    .user-experience {
+        font-size: 1.6rem;
+    }
+
+    .name,
+    .title {
+        font-size: 1.6rem;
+    }
+
+
+    .image-box {
+        width: 13%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .test-card {
+        padding: 1.5rem;
+    }
+
+    .tag-line {
+        font-size: 2.15rem;
+    }
+
+    .symbol {
+        font-size: 3.35rem;
+    }
+
+    .user-experience {
+        font-size: 1.55rem;
+    }
+
+    .name,
+    .title {
+        font-size: 1.55rem;
+    }
+
+
+    .image-box {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .test-card {
+        padding: 1.3rem;
+    }
+
+    .tag-line {
+        font-size: 2.05rem;
+    }
+
+    .symbol {
+        font-size: 3rem;
+    }
+
+    .user-experience {
+        font-size: 1.35rem;
+    }
+
+    .name,
+    .title {
+        font-size: 1.35rem;
+    }
+
+
+    .image-box {
+        width: 17%;
+    }
+}

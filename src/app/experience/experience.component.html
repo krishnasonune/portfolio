@@ -1,0 +1,32 @@
+<section class="experience">
+    <span class="experience-image-box">
+        <img src="assets/experience.svg" data-aos="fade-up" alt="loading...." class="experience-image">
+    </span>
+
+    <span class="experience-text-content">
+        <h1 class="experience-title" data-aos="fade-up">Experience</h1>
+        <h2 class="experience-subtitle" data-aos="fade-up">Experience & Internships</h2>
+        <h3 class="experience-details" data-aos="fade-up">My software developer experience journey: a story of growth, innovation, and
+            dedication. Join me as I explore the boundless possibilities of coding and technology. Let's dive into this
+            fascinating realm together!</h3>
+    </span>
+</section>
+
+<section class="work-details">
+    <details class="detail" open>
+        <summary class="sum">Work</summary>
+        <div *ngFor="let detail of work_details">
+            <app-experience-card [detail]="detail"></app-experience-card>
+        </div>
+    </details>
+</section>
+
+
+<section class="work-details">
+    <details class="detail">
+        <summary class="sum">Internship</summary>
+        <div *ngFor="let detail of internship_details">
+            <app-experience-card [detail]="detail"></app-experience-card>
+        </div>
+    </details>
+</section>

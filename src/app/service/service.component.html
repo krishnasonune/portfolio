@@ -1,0 +1,41 @@
+<section class="service-section">
+    <span class="service-image-box">
+        <img src="assets/dev-productivity.svg" data-aos="fade-up" alt="" class="service-image">
+    </span>
+    <span class="service-text-content" data-aos="fade-up">
+        <h1 class="service-title">Services</h1>
+        <p class="service-subtitle">With a passion for Programming and a commitment to excellence, I am here to cater your programming needs. From crafting efficient solutions to creating sleek software's, I take pride in delivering high-quality results. Embrace the advantages of a dedicated and skilled developer, ready to turn your vision into a successful reality. Let's bring your projects to life, one line of code at a time!</p>
+    </span>
+</section>
+
+<section class="service-section back">
+    <span class="service-text-content" data-aos="fade-right">
+        <h1 class="service-title">Web Development</h1>
+        <p class="service-subtitle">Hey there, I'm krishna, you got perfect guy for top-notch web development. With a knack for blending creativity and code, I turn ideas into impressive websites. My focus? Crafting seamless websites and robust functionality that make online experiences unforgettable. Let's work together to make your digital goals a reality.</p>
+    </span>
+
+    <span class="service-image-box" data-aos="fade-right">
+        <img src="assets/webservices.svg" alt="loading...." class="service-image">
+    </span>
+</section>
+
+<section class="service-section">
+    <span class="service-image-box" data-aos="fade-right">
+        <img src="assets/appservice2.svg" alt="" class="service-image">
+    </span>
+    <span class="service-text-content" data-aos="fade-right">
+        <h1 class="service-title">App Development</h1>
+        <p class="service-subtitle">looking for a skilled Android app developer to transform your ideas into functional and user-friendly apps? Look no further. As a seasoned freelance Android app developer, I offer a range of services that cater to your unique requirements:   
+        </p>
+    </span>
+</section>
+
+<section class="testionmials-section">
+    <span class="test-title">
+        <h1>Testimonials</h1>
+    </span>
+
+    <span class="testinomial-cards" *ngFor="let test of testinomials" data-aos="fade-up">
+        <app-testimonial-card [testinomial]="test"></app-testimonial-card>
+    </span>
+</section>

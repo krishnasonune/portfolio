@@ -1,0 +1,16 @@
+<section class="card" data-aos="fade-up" (click)="openNewTab(project)">
+    <span class="project-header">
+        <img src="assets/github.svg"  alt="" class="project-image">
+        <h1 class="project-title" >{{project?.name}}</h1>
+    </span>
+
+    <span class="project-description">
+        <p class="point">{{project?.description}}</p>
+    </span>
+
+    <span class="tech-stack">
+        <div *ngFor="let tech of project?.technology">
+            <img src="assets/skills_icons/{{tech}}.svg"  alt="loading...." class="stack">
+        </div>
+    </span>
+</section>
