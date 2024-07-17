@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host {
+    --bg-color: #3F72AF;
+    --light-bg:rgb(215, 231, 238);
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: rgb(0, 28, 85);
+    --svg-color: #0569A8
+}
+
+.contact-section {
+    background-color: var(--light-bg);
+    color: var(--btn-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Hind', sans-serif;
+}
+
+.contact-section.back {
+    background-color: var(--light-bg);
+    color: var(--btn-color);
+}
+
+.contact-image-box {
+    width: 48%;
+}
+
+
+.contact-image {
+    width: 100%;
+    padding: 5rem;
+}
+
+.contact-text-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem 0;
+    padding: 1rem;
+}
+
+.contact-title {
+    font-size: 5rem;
+}
+
+.contact-subtitle {
+    font-size: 2.2rem;
+    font-weight: 600;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 0 .2rem;
+}
+
+.social {
+    width: 4.5rem;
+    cursor: pointer;
+}
+
+.resume-btn {
+    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--btn-color);
+    color: var(--color);
+    padding: 0.9rem 1.5rem;
+    border: 1px solid var(--btn-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.resume-btn:hover {
+    color: var(--btn-color);
+    background-color: var(--color);
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-title {
+        font-size: 4rem;
+    }
+
+    .contact-subtitle {
+        font-size: 2rem;
+    }
+
+    .resume-btn {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 1rem 0;
+    }
+
+    .contact-section.back {
+        flex-direction: column-reverse;
+        gap: 1rem 0;
+    }
+
+    .contact-image-box {
+        width: 60%;
+    }
+
+    .contact-image {
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .contact-text-content {
+        width: 80%;
+    }
+
+    .contact-title {
+        font-size: 3.8rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.9rem;
+    }
+
+    .resume-btn {
+        font-size: 1.9rem;
+    }
+
+
+    .social-media {
+        gap: 0 .4rem;
+    }
+
+    .social {
+        width: 4.7rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 1rem;
+    }
+
+    .contact-image-box {
+        width: 70%;
+    }
+
+    .contact-image {
+        padding: 2rem;
+    }
+
+    .contact-text-content {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 3.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.9rem;
+    }
+
+    .resume-btn {
+        font-size: 1.9rem;
+    }
+
+    .social-media {
+        gap: 0 .5rem;
+    }
+
+    .social {
+        width: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .contact-image-box {
+        width: 80%;
+    }
+
+    .contact-title {
+        font-size: 3.3rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.7rem;
+    }
+
+    .resume-btn {
+        font-size: 1.7rem;
+    }
+
+    .social-media {
+        gap: 0 .3rem;
+    }
+
+    .social {
+        width: 4.3rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contact-image-box {
+        width: 90%;
+    }
+
+    .contact-image {
+        padding: 1.5rem;
+    }
+
+    .contact-title {
+        font-size: 3.1rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .resume-btn {
+        font-size: 1.6rem;
+    }
+
+    .social-media {
+        gap: 0 .2rem;
+    }
+
+    .social {
+        width: 4rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .contact-image-box {
+        width: 100%;
+    }
+
+    .contact-image {
+        padding: 1.2rem;
+    }
+
+    .contact-title {
+        font-size: 2.8rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .social-media {
+        gap: 0.2rem;
+    }
+
+    .social {
+        width: 3.7rem;
+    }
+
+    .resume-btn {
+        font-size: 1.4rem;
+    }
+}

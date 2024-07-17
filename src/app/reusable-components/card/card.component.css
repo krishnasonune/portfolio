@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host{
+    --max-lines : 2;
+    --card-color: #70b8f7;
+    --card-hover-color: #334c63;
+    --card-text-color: #1c365c;
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 0;
+    background-color: var(--card-color);
+    color: var(--card-text-color);
+    padding: 2rem 2rem;
+    cursor: pointer;
+    font-family: 'Hind', sans-serif;
+}
+
+.project-header{
+    display: flex;
+    gap: 0 1rem;
+    align-items: center;
+}
+
+.project-image{
+    width: 3rem;
+}
+
+.project-title{
+    font-size: 2.5rem;
+}
+
+.point{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+
+.tech-stack{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem 1rem;
+}
+
+.stack{
+    width: 4rem;
+}
+
+.card:hover{
+    filter: drop-shadow(5px 5px 20px var(--card-hover-color));
+}
+
+@media screen and (max-width: 1200px) {
+
+    .project-header{
+        gap:0 0.5rem;
+    }
+    .project-image{
+        width: 2.8rem;
+    }
+
+    .project-title{
+        font-size: 2.3rem;
+    }
+
+    .point{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    .project-header{
+        gap:0 0.5rem;
+    }
+    .project-image{
+        width: 2.5rem;
+    }
+
+    .project-title{
+        font-size: 2rem;
+    }
+
+    .point{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 576px) {
+}
+@media screen and (max-width: 400px) {
+    
+
+    .project-title{
+        font-size: 1.7rem;
+    }
+
+    .point{
+        font-size: 1.5rem;
+    }
+
+    .tech-stack{
+        gap: 0.5rem;
+    }
+
+    .stack{
+        width: 3.8rem;
+    }
+}
+@media screen and (max-width: 300px) {
+
+    .project-title{
+        font-size: 1.5rem;
+    }
+
+    .point{
+        font-size: 1.3rem;
+    }
+
+    .tech-stack{
+        gap: 0.2rem;
+    }
+
+    .stack{
+        width: 3.6rem;
+    }
+}

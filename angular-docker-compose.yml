@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+    portfolio:
+        build:
+          context: ./portfolio
+          dockerfile: Dockerfile
+
+        ports:
+          - 8080:80
+
+        restart: 'on-failure'

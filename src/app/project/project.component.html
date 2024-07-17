@@ -1,0 +1,25 @@
+<section class="project-section">
+    <div class="project-image-box">
+        <img src="assets/mindmap.svg" data-aos="fade-up" alt="" class="project-image">
+    </div>
+    <div class="project-content-box">
+        <h1 class="project-service-title" data-aos="fade-up">Projects</h1>
+        <p class="project-service-description" data-aos="fade-up">
+            Hello! I'm a full stack developer with a passion for creating dynamic and user-centric web applications. With expertise in both front-end and back-end technologies, I thrive in delivering seamless and engaging experiences to users. My portfolio showcases a diverse range of projects, highlighting my ability to handle end-to-end development and tackle complex challenges. I take pride in staying up-to-date with the latest trends and technologies to ensure my solutions are innovative and efficient. Let's explore how my skills and experience can elevate your digital projects to new heights.
+        </p>
+    </div>
+</section>
+
+<section class="project-items">
+    <div id="heading">
+        <h1 class="heading-intro">Some Of My Projects ....</h1>
+    </div>
+    
+    <div class="card-wrapper" *ngFor="let project of projects">
+        <app-card [project]="project" (openProject)="NewTab.openNewTab(project.url)"></app-card>
+    </div>
+    
+    <div id="more-projects">
+        <button class="repository" (click)="NewTab.openNewTab(NewTab.more_projects)">More Projects</button>
+    </div>
+</section>

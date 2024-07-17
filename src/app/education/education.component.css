@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host {
+    --bg-color: #3F72AF;
+    --light-bg:rgb(215, 231, 238);
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: rgb(0, 28, 85);
+    --svg-color: #0569A8
+}
+
+.education-section {
+    background-color: var(--light-bg);
+    color: var(--btn-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Hind', sans-serif;
+    padding: 2rem 2rem;
+}
+
+.education-image-box {
+    width: 48%;
+}
+
+.education-image {
+    width: 100%;
+    padding: 3rem;
+}
+
+.education-text-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem 0;
+    padding: 2rem 1rem;
+}
+
+.education-title {
+    font-size: 5rem;
+}
+
+.education-subtitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.coding-platform-box {
+    display: flex;
+    gap: 0 1.5rem;
+}
+
+.platform-image {
+    width: 6rem;
+    cursor: pointer;
+}
+
+.Degrees {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--btn-color);
+    background-color: var(--light-bg);
+    gap: 2rem 0;
+    padding: 2rem 2rem;
+}
+
+.degree-title {
+    font-size: 5rem;
+    text-shadow: 3px 2px 3px var(--bg-color);
+}
+
+.degree-cards {
+    width: 65%;
+}
+
+.certifications {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--light-bg);
+    gap: 3rem;
+    padding: 2rem 1.5rem;
+}
+
+.c-title {
+    grid-column-start: span 3;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .education-title {
+        font-size: 4rem;
+    }
+
+    .education-subtitle {
+        font-size: 2.3rem;
+    }
+
+    .platform-image {
+        width: 5.5rem;
+    }
+
+    .degree-title {
+        font-size: 4.5rem;
+    }
+
+    .degree-cards {
+        width: 70%;
+    }
+
+    .certifications {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        padding: 2rem 2rem;
+    }
+
+    .c-title {
+        grid-column-start: span 2;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .education-section {
+        flex-direction: column;
+        gap: 2rem 0;
+        padding: 1rem;
+    }
+
+    .education-image-box {
+        width: 65%;
+    }
+
+    .education-text-content {
+        width: 75%;
+    }
+
+    .education-title {
+        font-size: 4rem;
+    }
+
+    .education-subtitle {
+        font-size: 2.4rem;
+    }
+
+    .platform-image {
+        width: 6rem;
+    }
+
+    .degree-title {
+        font-size: 4.5rem;
+    }
+
+    .degree-cards {
+        width: 80%;
+    }
+
+
+    .certifications {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 2rem 1.5rem;
+        place-items: center;
+    }
+
+    .c-title {
+        grid-column-start: span 1;
+    }
+
+    .certification-cards{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .education-image-box {
+        width: 80%;
+    }
+
+    .education-image {
+        padding: 2rem;
+    }
+
+    .education-text-content {
+        width: 90%;
+    }
+
+    .education-title {
+        font-size: 3.8rem;
+    }
+
+    .education-subtitle {
+        font-size: 2.2rem;
+    }
+
+    .platform-image {
+        width: 5.2rem;
+    }
+
+    .degree-title {
+        font-size: 4.2rem;
+    }
+
+    .degree-cards {
+        width: 90%;
+    }
+
+    .certifications{
+        gap: 3rem;
+    }
+
+    .certification-cards{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .education-image-box {
+        width: 90%;
+    }
+
+    .education-image {
+        padding: 1rem;
+    }
+
+    .education-text-content {
+        width: 100%;
+    }
+
+    .education-title {
+        font-size: 3rem;
+    }
+
+    .education-subtitle {
+        font-size: 1.9rem;
+    }
+
+    .coding-platform-box {
+        gap: 0 1rem;
+    }
+
+    .platform-image {
+        width: 5rem;
+    }
+
+    .Degrees {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .degree-cards {
+        width: 95%;
+    }
+
+    .certifications{
+        gap: 2rem;
+    }
+
+    .certification-cards{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .education-image-box {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .education-image {
+        padding: 1rem;
+    }
+
+    .education-title {
+        font-size: 2.2rem;
+    }
+
+    .education-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .coding-platform-box {
+        gap: 0 0.5rem;
+    }
+
+    .platform-image {
+        width: 4rem;
+    }
+
+    .degree-title {
+        font-size: 3.4rem;
+    }
+
+    .Degrees {
+        padding: 1rem;
+    }
+
+    .certifications{
+        gap: 2rem;
+    }
+
+    .certification-cards{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .education-title {
+        font-size: 1.9rem;
+    }
+
+    .education-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .platform-image {
+        width: 3rem;
+    }
+
+    .Degrees {
+        padding: 1rem 0.5rem;
+    }
+
+    .degree-title {
+        font-size: 2.7rem;
+    }
+}

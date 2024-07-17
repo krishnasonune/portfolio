@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host{
+    --bg-color: #3F72AF;
+    --light-bg:rgb(215, 231, 238);
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: rgb(0, 28, 85);
+    --svg-color: #0569A8
+}
+
+.project-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-bg);
+    color: var(--btn-color);
+    padding: 2rem 2rem;
+    font-family: 'Hind', sans-serif;
+}
+
+.project-image-box{
+    width: 48%;
+}
+
+.project-image{
+    width: 100%;
+    padding: 2rem;
+}
+
+.project-content-box{
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.project-service-title{
+    font-size: 5rem;
+    padding: 1rem 0;
+}
+
+
+.project-service-description{
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    opacity: 0.8;
+    word-spacing: 0.2rem;
+}
+
+#heading, #more-projects{
+    grid-column-start: span 3;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--btn-color);
+    font-family: 'Hind', sans-serif;
+}
+
+.project-items{
+    width: 100%;
+    display: grid;
+    background-color: var(--light-bg);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 2rem;
+    gap: 1rem 1rem;
+}
+
+.card-wrapper{
+    width: 100%;
+}
+
+.repository{
+    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--btn-color);
+    color: var(--color);
+    padding: 1.3rem 2rem;
+    border: 1px solid var(--btn-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.repository:hover{
+    color: var(--btn-color);
+    background-color: var(--color);
+}
+
+@media screen and (max-width: 1200px) {
+    .project-service-title{
+        font-size: 4.5rem;
+    }
+
+    .project-service-description{
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+    }
+
+    #heading, #more-projects{
+        font-size: 2.7rem;
+        grid-column-start: span 2;
+    }
+
+    .project-items{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media screen and (max-width: 992px) {
+    .project-section{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem 0;
+    }
+
+    .project-image-box{
+        width: 70%;
+    }
+
+    .project-content-box{
+        width: 80%;
+    }
+
+    .project-service-title{
+        font-size: 5rem;
+    }
+
+    .project-service-description{
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .project-section{
+        gap: 2rem 0;
+    }
+    .project-image-box{
+        width: 80%;
+    }
+
+    .project-content-box{
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .project-service-title{
+        font-size: 4.6rem;
+        padding: 0.6rem 0;
+    }
+
+    .project-service-description{
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+
+    #heading, #more-projects{
+        font-size: 2.5rem;
+        grid-column-start: span 1;
+    }
+
+    .project-items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+@media screen and (max-width: 576px) {
+    .project-section{
+        padding: 1rem;
+    }
+    .project-image-box{
+        width: 90%;
+    }
+
+    .project-content-box{
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .project-service-title{
+        font-size: 4rem;
+        padding: 0.6rem 0;
+    }
+
+    .project-service-description{
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
+
+    #heading, #more-projects{
+        font-size: 2.3rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .project-items{
+        padding: 1.5rem;
+    }
+
+    .project-image-box{
+        width: 100%;
+    }
+
+    .project-service-title{
+        font-size: 3.5rem;
+        padding: 0.4rem 0;
+    }
+
+    .project-service-description{
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+
+    #heading, #more-projects{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .project-service-title{
+        font-size: 3.2rem;
+        padding: 0.4rem 0;
+    }
+
+    #heading{
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:host{
+    --light-bg:rgb(215, 231, 238);
+    /* --light-bg:rgb(237, 249, 254); */
+    --bg-color: #3F72AF;
+    --active-color: rgb(0, 28, 85);
+    --color : #F8F8F7;
+}
+
+.navbar{
+    max-width: 100dvw;
+    background-color: var(--light-bg);
+    color: var(--bg-color);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1.7rem;
+    list-style: none;
+}
+
+.navlogo{
+    font-size: 2.1rem;
+    font-family: 'Kaushan Script', cursive;
+    color: var(--active-color);
+    text-shadow: 2px 2px var(--color);
+    letter-spacing: 2px;
+}
+
+.menu-item{
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-active{
+    color: var(--active-color);
+}
+
+.menu-icon, .cls-icon{
+    width: 3rem;
+}
+
+.menu-btn{
+    display: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+   .navlogo{
+      font-size: 2rem;
+   }
+
+   .menu-item{
+      font-size: 1.3rem;
+   }
+}
+
+@media screen and (max-width: 992px) {
+
+    .menu{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem 0;
+        background-color: var(--light-bg);
+        color: var(--active-color);
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+
+    .nav-open .menu{
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    .cls-icon{
+        display: none;
+    }
+
+    .nav-open .cls-icon{
+        display: block;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .menu-item{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .menu{
+        width: 40%;
+    }
+
+    .menu-item{
+        font-size: 1.6rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    .menu{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .navbar{
+        padding: 15px 15px;
+    }
+    
+    .navlogo{
+        font-size: 1.7rem;
+    }
+
+    .menu{
+        width: 50%;
+    }
+
+    .menu-item{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .menu{
+        width: 55%;
+    }
+
+    .menu-item{
+        font-size: 1.2rem;
+    }
+}

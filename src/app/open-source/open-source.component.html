@@ -1,0 +1,37 @@
+<section class="opensrc-section">
+    <div class="leetcode-img-box" data-aos="fade-up">
+        <h1 class="stats-title">Hackerrank Statistics</h1>
+        <canvas baseChart [datasets]="chartData" [type]="'doughnut'" [legend]="true" [labels]="chartLabels"
+            [options]="chartOptions">
+        </canvas>
+    </div>
+    <div class="leetcode-img-box" data-aos="fade-up">
+        <h1 class="stats-title">LeetCode Statistics</h1>
+        <canvas baseChart [datasets]="leetcodeChartData" [type]="'doughnut'" [legend]="true" [labels]="chartLabels"
+            [options]="chartOptions">
+        </canvas>
+    </div>
+</section>
+
+<section class="heatmap-section">
+    <h2 class="heatmap-title">LeetCode Contributions</h2>
+    <span class="heatmapchart">
+        <apx-chart [series]="HeatmapchartOptions?.series!" [chart]="HeatmapchartOptions?.chart!"
+            [dataLabels]="HeatmapchartOptions?.dataLabels!" [title]="HeatmapchartOptions?.title!"
+            [colors]="HeatmapchartOptions?.colors" [theme]="HeatmapchartOptions?.theme!"
+            [responsive]="HeatmapchartOptions?.responsive!"></apx-chart>
+    </span>
+</section>
+
+<section class="heatmap-section">
+    <h2 class="heatmap-title">Github Contributions</h2>
+    <span class="heatmapchart">
+        <apx-chart [series]="GithubHeatmapchartOptions?.series!" 
+                [chart]="GithubHeatmapchartOptions?.chart!"
+                [dataLabels]="GithubHeatmapchartOptions?.dataLabels!" 
+                [title]="GithubHeatmapchartOptions?.title!"
+                [colors]="GithubHeatmapchartOptions?.colors" 
+                [theme]="GithubHeatmapchartOptions?.theme!"
+                [responsive]="GithubHeatmapchartOptions?.responsive!"></apx-chart>
+    </span>
+</section>
