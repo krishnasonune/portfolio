@@ -13,25 +13,21 @@
     </div>
 </section>
 
-<section class="heatmap-section">
-    <h2 class="heatmap-title">LeetCode Contributions</h2>
-    <span class="heatmapchart">
-        <apx-chart [series]="HeatmapchartOptions?.series!" [chart]="HeatmapchartOptions?.chart!"
-            [dataLabels]="HeatmapchartOptions?.dataLabels!" [title]="HeatmapchartOptions?.title!"
-            [colors]="HeatmapchartOptions?.colors" [theme]="HeatmapchartOptions?.theme!"
-            [responsive]="HeatmapchartOptions?.responsive!"></apx-chart>
-    </span>
-</section>
+
 
 <section class="heatmap-section">
-    <h2 class="heatmap-title">Github Contributions</h2>
-    <span class="heatmapchart">
-        <apx-chart [series]="GithubHeatmapchartOptions?.series!" 
-                [chart]="GithubHeatmapchartOptions?.chart!"
-                [dataLabels]="GithubHeatmapchartOptions?.dataLabels!" 
-                [title]="GithubHeatmapchartOptions?.title!"
-                [colors]="GithubHeatmapchartOptions?.colors" 
-                [theme]="GithubHeatmapchartOptions?.theme!"
-                [responsive]="GithubHeatmapchartOptions?.responsive!"></apx-chart>
+    <span  class="heatmapchart">
+        <app-heatmap [zArray]="leetcode" [title]="'LeetCode Stats'" *ngIf="isLeetCodeCalFetched"></app-heatmap>
     </span>
 </section>
+<h2 class="heatmap-title">LeetCode Contributions</h2>
+
+
+<section class="heatmap-section">
+    <span class="heatmapchart">
+        <app-heatmap [zArray]="github" [title]="'Github Stats'" *ngIf="isGithubFetched"></app-heatmap>
+    </span>
+</section>
+<h2 class="heatmap-title">Github Contributions</h2>
+
+

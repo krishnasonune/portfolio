@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ClientService } from '../client/client.service';
 import * as Aos from 'aos';
 import { ChartDataset } from 'chart.js';
-import { ChartOptions } from '../interface/chartOptions';
 import { Submissions } from '../interface/submission';
 import * as ApexCharts from 'apexcharts';
 import { contributions } from '../interface/githubsubmission';
@@ -15,7 +14,6 @@ import { contributions } from '../interface/githubsubmission';
 export class OpenSourceComponent {
 
   constructor(private clientServ: ClientService) { }
-
   //#region Doughnut Chart
   hackerrankStats: any = {
     "solvedProblem": 80,
@@ -30,7 +28,6 @@ export class OpenSourceComponent {
     'hsl(0 91% 59%)'
   ]
   leetcodeChartData: ChartDataset[] | undefined;
-  leetcodeSubmissionCalendar: Submissions[] = [];
   chartData: ChartDataset[] = [
     {
       data: [20, 25, 30],
@@ -60,386 +57,63 @@ export class OpenSourceComponent {
         borderWidth: 2
       },
     ];
-
-    for (const key in stat.submissionCalendar) {
-      var day = new Date(Number(key) * 1000).toLocaleDateString();
-      this.leetcodeSubmissionCalendar.push({ date: day, count: stat.submissionCalendar[key] });
-    }
   }
   //#endregion
 
   //#region Leetcode HeatMap Chart
-  public HeatmapchartOptions: ChartOptions | undefined;
-
-
+  leetcode = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  ];
+  public isLeetCodeFetched = false;
+  public isLeetCodeCalFetched = false;
   heatMapChart(data: any, title: string) {
-    this.HeatmapchartOptions = {
-      series: [
-        {
-          name: "Jan",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 0))
-        },
-        {
-          name: "Feb",
-          data: this.generateData(29, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 1))
-        },
-        {
-          name: "Mar",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 2))
-        },
-        {
-          name: "Apr",
-          data: this.generateData(30, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 3))
-        },
-        {
-          name: "May",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 4))
-        },
-        {
-          name: "Jun",
-          data: this.generateData(30, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 5))
-        },
-        {
-          name: "Jul",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 6))
-        },
-        {
-          name: "Aug",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 7))
-        },
-        {
-          name: "Sep",
-          data: this.generateData(30, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 8))
-        },
-        {
-          name: "Oct",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 9))
-        },
-        {
-          name: "Nov",
-          data: this.generateData(30, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 10))
-        },
-        {
-          name: "Dec",
-          data: this.generateData(31, this.leetcodeSubmissionCalendar
-            .filter(x => new Date(x.date).getMonth() == 11))
-        }
-      ].reverse(),
-      chart: {
-        height: 350,
-        type: "heatmap",
-        toolbar: {
-          tools: {
-            download: true,
-            selection: true,
-            zoom: true,
-            zoomin: true,
-            zoomout: true
-          },
-          export: {
-            svg: {
-              filename: "Krishna's Statisrics",
-            },
-            png: {
-              filename: "Krishna's Statisrics",
-            }
-          }
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      colors: ["#001c55"], //["#008FFB"],
-      title: {
-        text: `${title} Statistics`
-      },
-      theme: {
-        mode: "light"
-      },
-      xaxis: {},
-      yaxis: {},
-      responsive: [
-        {
-          breakpoint: 768,
-          options: {
-            chart: {
-              height: 270,
-              width: 900
-            }
-          }
-        },
-        {
-          breakpoint: 620,
-          options: {
-            chart: {
-              height: 280,
-              width: 850
-            },
-            xaxis: {
-              labels: {
-                style: {
-                  fontSize: '1rem'
-                }
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 400,
-          options: {
-            chart: {
-              height: 350,
-              width: 850
-            },
-            xaxis: {
-              labels: {
-                style: {
-                  fontSize: '1rem'
-                }
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 300,
-          options: {
-            chart: {
-              height: 350,
-              width: 850
-            },
-            xaxis: {
-              labels: {
-                style: {
-                  fontSize: '1rem'
-                }
-              }
-            }
-          }
-        }
-      ]
-    };
-  }
-
-  generateData(count: any, data: Submissions[]) {
-    var i = 0;
-    var series = [];
-    while (i < count) {
-      var x = (i + 1).toString();
-      var y = 0;
-
-      series.push({
-        x: x,
-        y: y
-      });
-      i++;
-    }
-
     for (const key in data) {
-      let day = data[key].date.split('/')[1];
-      let serie = series.find(d => d.x == day)!;
-      serie.y = data[key].count;
+      const unixTimeStamp = parseInt(key, 10);
+      var date = new Date( unixTimeStamp * 1000);
+      const day = date.getDate() - 1;
+      const month = date.getMonth();
+      this.leetcode[month][day] = data[key]
     }
 
-    return series;
   }
   //#endregion
 
   //#region Github HeatMap Chart
-  public GithubHeatmapchartOptions: ChartOptions | undefined;
-
+  github = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  ];
+  public isGithubFetched = false;
   GithubHeatMapChart(data: any, title: string) {
-    console.log(new Date(data.contributions[0].date).getMonth());
-    this.GithubHeatmapchartOptions = {
-      series: [
-        {
-          name: "Jan",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string }) => new Date(x.date).getMonth() == 0))
-        },
-        {
-          name: "Feb",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 1))
-        },
-        {
-          name: "Mar",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 2 ))
-        },
-        {
-          name: "Apr",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 3 ))
-        },
-        {
-          name: "May",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 4 ))
-        },
-        {
-          name: "Jun",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 5 ))
-        },
-        {
-          name: "Jul",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 6 ))
-        },
-        {
-          name: "Aug",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 7))
-        },
-        {
-          name: "Sep",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 8 ))
-        },
-        {
-          name: "Oct",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 9 ))
-        },
-        {
-          name: "Nov",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 10))
-        },
-        {
-          name: "Dec",
-          data: this.generateGithubData(31, data.contributions
-            .filter((x: { date: string | Date }) => new Date(x.date).getMonth() == 11))
-        }
-      ].reverse(),
-      chart: {
-        height: 350,
-        type: "heatmap",
-        toolbar: {
-          tools: {
-            download: true,
-            selection: true,
-            zoom: true,
-            zoomin: true,
-            zoomout: true
-          },
-          export: {
-            svg: {
-              filename: "Krishna's Statisrics",
-            },
-            png: {
-              filename: "Krishna's Statisrics",
-            }
-          }
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      colors: ["#001c55"], //["#008FFB"],
-      title: {
-        text: `${title} Statistics`
-      },
-      theme: {
-        mode: "light"
-      },
-      xaxis: {},
-      yaxis: {},
-      responsive: [
-        {
-          breakpoint: 768,
-          options: {
-            chart: {
-              height: 270,
-              width: 900
-            }
-          }
-        },
-        {
-          breakpoint: 620,
-          options: {
-            chart: {
-              height: 280,
-              width: 850
-            },
-            xaxis: {
-              labels: {
-                style: {
-                  fontSize: '1rem'
-                }
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 400,
-          options: {
-            chart: {
-              height: 350,
-              width: 850
-            },
-            xaxis: {
-              labels: {
-                style: {
-                  fontSize: '1rem'
-                }
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 300,
-          options: {
-            chart: {
-              height: 350,
-              width: 850
-            },
-            xaxis: {
-              labels: {
-                style: {
-                  fontSize: '1rem'
-                }
-              }
-            }
-          }
-        }
-      ]
-    };
+    for (const key in data.contributions) {
+      const score = data.contributions[key]
+      const day = new Date(score.date).getDate() - 1
+      const month = new Date(score.date).getMonth()
+      this.github[month][day] = score.count
+    }
   }
 
-  generateGithubData(count: any, data: any) {
-    var i = 0;
-    var series = [];
-    while (i < count) {
-      var x = (i + 1).toString();
-      var y = 0;
-
-      
-      i++;
-    }
-
-    for (const key in data) {
-      let day = data[key].date.split('-')[2];
-      let val = data[key].count;
-      series.push({
-        x: day,
-        y: val
-      });
-    }
-
-    return series;
-  }
   //#endregion
 
   //#region Stats API Call
@@ -448,11 +122,8 @@ export class OpenSourceComponent {
     if (sessionStorage.getItem('leetcode') == null) {
       this.clientServ.getLeetCodeStats().subscribe(x => {
         this.formDoughnutChart(x);
-        this.heatMapChart(x, "LeetCode");
-        leetcodeStat = JSON.stringify(x);
-        sessionStorage.setItem('leetcode', leetcodeStat);
-
-
+        this.isLeetCodeFetched = !this.isLeetCodeFetched;
+        sessionStorage.setItem('leetcode', JSON.stringify(x));
       },
         err => {
 
@@ -464,20 +135,33 @@ export class OpenSourceComponent {
     else {
       leetcodeStat = JSON.parse(sessionStorage.getItem('leetcode')!);
       this.formDoughnutChart(leetcodeStat);
-      this.heatMapChart(leetcodeStat, "LeetCode");
+      this.isLeetCodeFetched = !this.isLeetCodeFetched;
+    }
+
+  }
+
+  getLeetcodeCalendarStats() {
+    if (sessionStorage.getItem('leetcode_cal') == null) {
+      this.clientServ.getLeetCodeCalendarStats().subscribe(x => {
+        this.heatMapChart(x, "Leetcode")
+        this.isLeetCodeCalFetched = !this.isLeetCodeCalFetched;
+        sessionStorage.setItem('leetcode_cal', JSON.stringify(x));
+      })
+    }
+    else {
+      let leetcodeStat = JSON.parse(sessionStorage.getItem('leetcode_cal')!);
+      this.heatMapChart(leetcodeStat, 'LeetCode')
+      this.isLeetCodeCalFetched = !this.isLeetCodeCalFetched;
     }
 
   }
 
   getGithubStats() {
-    let githubStat = null;
     if (sessionStorage.getItem('github') == null) {
       this.clientServ.getGithubStat().subscribe((x: contributions) => {
-        githubStat = JSON.stringify(x);
-        sessionStorage.setItem('github', githubStat);
         this.GithubHeatMapChart(x, "Github");
-
-
+        this.isGithubFetched = !this.isGithubFetched
+        sessionStorage.setItem('github', JSON.stringify(x));
       },
         err => {
 
@@ -487,8 +171,10 @@ export class OpenSourceComponent {
         })
     }
     else {
-      githubStat = JSON.parse(sessionStorage.getItem('github')!);
+      let githubStat = JSON.parse(sessionStorage.getItem('github')!);
       this.GithubHeatMapChart(githubStat, "Github");
+      this.isGithubFetched = !this.isGithubFetched
+
     }
   }
   //#endregion
@@ -499,6 +185,7 @@ export class OpenSourceComponent {
     });
 
     this.getLeetcodestats();
+    this.getLeetcodeCalendarStats();
     this.getGithubStats();
   }
 }

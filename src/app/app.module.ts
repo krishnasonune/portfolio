@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
@@ -8,7 +9,7 @@ import { HeroicComponent } from './heroic/heroic.component';
 import { routing } from './app-routing';
 import { ProjectComponent } from './project/project.component';
 import { FooterComponent } from './footer/footer.component';
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { CardComponent } from './reusable-components/card/card.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
@@ -22,6 +23,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { OpenSourceComponent } from './open-source/open-source.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NgApexchartsModule } from 'ng-apexcharts';
+
+
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+import { HeatmapComponent } from './reusable-components/heatmap/heatmap.component';
+
+PlotlyModule.plotlyjs = PlotlyJS;
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,12 +49,16 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     ServiceComponent,
     TestimonialCardComponent,
     OpenSourceComponent,
+    HeatmapComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    CommonModule,
     NgChartsModule,
     NgApexchartsModule,
+    PlotlyModule,
     routing
   ],
   providers: [],

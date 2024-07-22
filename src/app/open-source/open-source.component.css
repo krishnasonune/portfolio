@@ -45,9 +45,11 @@
 
 .heatmap-title{
     font-size: 3rem;
-    margin: 2rem 0;
     text-align: center;
     color: var(--btn-color);
+    background-color: var(--light-bg);
+    font-family: 'Hind', sans-serif;
+    font-weight: 900;
 }
 
 

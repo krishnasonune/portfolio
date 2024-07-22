@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClientService } from './client/client.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(){}
+  
   ngOnInit() : void{
-   
   }
 }
