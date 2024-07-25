@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host {
+    --bg-color: #a6e1fa;
+    --light-bg: #d7e7ee;
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: #001c55;
+    --svg-color: #0569A8;
+    --max-lines: 1;
+}
+
+
+.leetcode-card {
+    width: 100%;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0;
+    background-color: var(--bg-color);
+    color: var(--btn-color);
+    font-family: 'Hind', sans-serif;
+    font-weight: 900;
+}
+
+.leetcode-card-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.leetcode-title {
+    font-size: 2rem;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+
+.status-skill {
+    width: 35%;
+}
+
+.leetcode-card-base {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.leetcode-status {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .leetcode-card-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 576px) {}
+
+@media screen and (max-width: 400px) {
+    .leetcode-title {
+        font-size: 1.8rem;
+
+    }
+
+    .leetcode-status {
+
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .leetcode-title {
+        font-size: 1.6rem;
+
+    }
+
+    .leetcode-status {
+
+        font-size: 0.7rem;
+    }
+
+}
+
+@media screen and (max-width: 200px) {}

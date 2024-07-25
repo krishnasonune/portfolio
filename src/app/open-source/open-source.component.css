@@ -43,7 +43,7 @@
     overflow-x: scroll;
 }
 
-.heatmap-title{
+.heatmap-title {
     font-size: 3rem;
     text-align: center;
     color: var(--btn-color);
@@ -52,10 +52,29 @@
     font-weight: 900;
 }
 
+.submission-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 1rem;
+    background-color: var(--light-bg);
+    padding: 2rem 2rem;
+}
+
+.leet-card {
+    width: 100%;
+}
+
 
 @media screen and (max-width: 1200px) {
     .leetcode-img-box {
         width: 24%;
+    }
+
+
+    .submission-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem 1rem;
     }
 }
 
@@ -78,6 +97,18 @@
     .heatmapchart {
         overflow-x: auto;
     }
+
+    .submission-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        place-items: center;
+        padding: 1rem;
+    }
+
+
+    .leet-card {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -89,17 +120,52 @@
         background-color: var(--light-bg);
         padding: 1rem 1rem;
     }
+
+    .submission-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        place-items: center;
+        padding: 0.8rem;
+    }
+
+
+    .leet-card {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 576px) {
     .leetcode-img-box {
         width: 58%;
     }
+
+    .submission-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        place-items: center;
+        padding: 0.6rem;
+    }
+
+
+    .leet-card {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .leetcode-img-box {
         width: 75%;
+    }
+
+    .submission-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        place-items: center;
+    }
+
+
+    .leet-card {
+        width: 90%;
     }
 }
 

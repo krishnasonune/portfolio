@@ -5,6 +5,7 @@ import { ChartDataset } from 'chart.js';
 import { Submissions } from '../interface/submission';
 import * as ApexCharts from 'apexcharts';
 import { contributions } from '../interface/githubsubmission';
+import { LeetCodeStatsDTO, recentSubmissions } from '../interface/LeetcodeDTO';
 
 @Component({
   selector: 'app-open-source',
@@ -27,10 +28,13 @@ export class OpenSourceComponent {
     'hsl(43 100% 50%)',
     'hsl(0 91% 59%)'
   ]
+  leetcodeStats !: LeetCodeStatsDTO;
   leetcodeChartData: ChartDataset[] | undefined;
   chartData: ChartDataset[] = [
     {
-      data: [20, 25, 30],
+      data: [this.hackerrankStats.easySolved, 
+        this.hackerrankStats.mediumSolved,
+      this.hackerrankStats.hardSolved],
       backgroundColor: this.colors,
       hoverBackgroundColor: this.colors,
       borderWidth: 2
@@ -48,7 +52,7 @@ export class OpenSourceComponent {
 
 
 
-  formDoughnutChart(stat: any) {
+  formDoughnutChart(stat: LeetCodeStatsDTO) {
     this.leetcodeChartData = [
       {
         data: [stat.easySolved, stat.mediumSolved, stat.hardSolved],
@@ -57,6 +61,19 @@ export class OpenSourceComponent {
         borderWidth: 2
       },
     ];
+
+    for (let i = 0; i < 9; i++) {
+      const unixTimeStamp = parseInt(stat.recentSubmissions[i].timestamp, 10);
+      const submission = {
+        title: stat.recentSubmissions[i].title,
+        statusDisplay: stat.recentSubmissions[i].statusDisplay.toLowerCase() !== "accepted" ? "Incorrect" : stat.recentSubmissions[i].statusDisplay,
+        lang: stat.recentSubmissions[i].lang,
+        titleSlug: stat.recentSubmissions[i].titleSlug,
+        __typename: stat.recentSubmissions[i].__typename,
+        timestamp: new Date(unixTimeStamp * 1000).toLocaleDateString('en-uk', {'dateStyle':"long"}),
+      }
+      this.leetcodeSubmissions.push(submission);
+    }
   }
   //#endregion
 
@@ -77,6 +94,7 @@ export class OpenSourceComponent {
   ];
   public isLeetCodeFetched = false;
   public isLeetCodeCalFetched = false;
+  public leetcodeSubmissions : recentSubmissions[] = [];
   heatMapChart(data: any, title: string) {
     for (const key in data) {
       const unixTimeStamp = parseInt(key, 10);
@@ -121,8 +139,11 @@ export class OpenSourceComponent {
     let leetcodeStat = null;
     if (sessionStorage.getItem('leetcode') == null) {
       this.clientServ.getLeetCodeStats().subscribe(x => {
+        x.recentSubmissions = x.recentSubmissions.sort((a,b) => parseInt(b.timestamp) - parseInt(a.timestamp))
+        this.leetcodeStats = x;
         this.formDoughnutChart(x);
         this.isLeetCodeFetched = !this.isLeetCodeFetched;
+        
         sessionStorage.setItem('leetcode', JSON.stringify(x));
       },
         err => {
@@ -134,7 +155,10 @@ export class OpenSourceComponent {
     }
     else {
       leetcodeStat = JSON.parse(sessionStorage.getItem('leetcode')!);
+      leetcodeStat.recentSubmissions = leetcodeStat.recentSubmissions.sort((a:any,b:any) => parseInt(b.timestamp) - parseInt(a.timestamp))
+      this.leetcodeStats = leetcodeStat;
       this.formDoughnutChart(leetcodeStat);
+      //this.leetcodeSubmissions = leetcodeStat.recentSubmissions;
       this.isLeetCodeFetched = !this.isLeetCodeFetched;
     }
 
@@ -177,6 +201,14 @@ export class OpenSourceComponent {
 
     }
   }
+
+  getStackOverFlowStats(){
+    this.clientServ.getStackOverFlowStats().subscribe(
+      (res :any) => {
+        console.log(res);
+      }
+    )
+  }
   //#endregion
 
   ngOnInit(): void {
@@ -187,5 +219,6 @@ export class OpenSourceComponent {
     this.getLeetcodestats();
     this.getLeetcodeCalendarStats();
     this.getGithubStats();
+    //this.getStackOverFlowStats();
   }
 }

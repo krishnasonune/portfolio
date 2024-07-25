@@ -1,0 +1,21 @@
+<span class="leetcode-card">
+    <span class="leetcode-card-header">
+        <span class="leetcode-title">{{leetcode_data.title}}</span>
+    </span>
+    <span class="leetcode-card-base">
+        <span class="leetcode-status">
+            <img class="status-skill" *ngIf="leetcode_data.statusDisplay === 'Accepted'; else wrongans" src="../../../assets/green_tick.svg" alt="Status">
+            <h2 class="leetcode-stats-text">{{leetcode_data.statusDisplay}}</h2>
+        </span>
+        <span>
+            <h2 class="leetcode-stats-text">{{leetcode_data.lang}}</h2>
+        </span>
+        <span>
+            <h2 class="leetcode-stats-text">{{leetcode_data.timestamp}}</h2>
+        </span>
+    </span>
+</span>
+
+<ng-template #wrongans>
+    <img class="status-skill" src="../../../assets/cross.svg" alt="Status">
+</ng-template>

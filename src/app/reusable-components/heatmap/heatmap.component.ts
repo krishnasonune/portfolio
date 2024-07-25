@@ -34,7 +34,7 @@ export class HeatmapComponent {
         }
       ],
       layout: {
-        // title: this.title,
+        title: this.title,
         margin : 0,
         xaxis: {
           title: 'Days',
@@ -46,7 +46,7 @@ export class HeatmapComponent {
         },
         showlegend: false,
          height: 500,
-         width: 1420,
+         width: 1410,
         plot_bgcolor: '#ffffff',    
         paper_bgcolor: '#d7e7ee',
         dragmode: false

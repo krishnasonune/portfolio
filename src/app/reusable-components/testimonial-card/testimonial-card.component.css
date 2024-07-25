@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
 
 :host {
-    --card-color: #70b8f7;
+    --card-color: #a6e1fa;
     --color: #F8F8F7;
     --card-hover-color: #334c63;
     --card-text-color: #1c365c;
@@ -14,6 +14,7 @@
     flex-direction: column;
     gap: 1.5rem;
     padding: 2rem;
+    color: var(--card-text-color);
 }
 
 .test-card:hover {

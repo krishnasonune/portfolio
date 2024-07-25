@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, of } from 'rxjs';
 import { LeetCodeStatsDTO } from '../interface/LeetcodeDTO';
+import { StackOverflowResponse } from '../interface/stackoverflow';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class ClientService {
 
   getGithubStat() : Observable<any>{
     return this.http.get('https://github-contributions-api.jogruber.de/v4/krishnasonune?y=2023');
+  }
+
+  getStackOverFlowStats() : Observable<StackOverflowResponse>{
+    return this.http.get<StackOverflowResponse>('https://api.stackexchange.com/2.3/users/17624910/answers?order=desc&sort=activity&site=stackoverflow')
   }
 }

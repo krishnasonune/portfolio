@@ -65,6 +65,7 @@
 .test-title {
     grid-column-start: span 2;
     font-size: 3rem;
+    color: var(--anim-color);
     text-align: center;
 }
 

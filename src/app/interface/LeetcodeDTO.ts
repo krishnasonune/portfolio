@@ -16,14 +16,7 @@ export interface LeetCodeStatsDTO {
   contributionPoint: number;
   reputation: number;
   submissionCalendar: { [timestamp: string]: number };
-  recentSubmissions: {
-    title: string;
-    titleSlug: string;
-    timestamp: string;
-    statusDisplay: string;
-    lang: string;
-    __typename: string;
-  }[];
+  recentSubmissions: recentSubmissions[];
   matchedUserStats: {
     acSubmissionNum: {
       difficulty: string;
@@ -37,3 +30,12 @@ export interface LeetCodeStatsDTO {
     }[];
   };
 }
+
+export interface recentSubmissions{
+  title: string;
+  titleSlug: string;
+  timestamp: string;
+  statusDisplay: string;
+  lang: string;
+  __typename: string;
+};

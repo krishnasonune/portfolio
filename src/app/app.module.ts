@@ -28,6 +28,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import { HeatmapComponent } from './reusable-components/heatmap/heatmap.component';
+import { LeetcodeCardComponent } from './reusable-components/leetcode-card/leetcode-card.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -50,6 +51,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     TestimonialCardComponent,
     OpenSourceComponent,
     HeatmapComponent,
+    LeetcodeCardComponent,
   ],
   imports: [
     BrowserModule,
