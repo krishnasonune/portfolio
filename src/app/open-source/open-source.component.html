@@ -15,7 +15,7 @@
 </section>
 
 <section class="heatmap-section">
-    <span class="heatmapchart" data-aos="fade-up">
+    <span class="heatmapchart">
         <app-heatmap [zArray]="leetcode" [title]="'Leetcode Submission Statistics'" *ngIf="isLeetCodeCalFetched"></app-heatmap>
     </span>
 </section>
@@ -29,7 +29,7 @@
 </section>
 
 <section class="heatmap-section">
-    <span class="heatmapchart" data-aos="fade-up">
+    <span class="heatmapchart">
         <app-heatmap [zArray]="github" [title]="'Github Contributions Statistics'" *ngIf="isGithubFetched"></app-heatmap>
     </span>
 </section>
