@@ -15,21 +15,21 @@
 </section>
 
 <section class="heatmap-section">
-    <span class="heatmapchart">
+    <span class="heatmapchart" data-aos="fade-up">
         <app-heatmap [zArray]="leetcode" [title]="'Leetcode Submission Statistics'" *ngIf="isLeetCodeCalFetched"></app-heatmap>
     </span>
 </section>
 <h2 class="heatmap-title">LeetCode Contributions</h2>
 <section class="submission-section">
 
-    <span class="leet-card" *ngFor="let data of leetcodeSubmissions">
-        <app-leetcode-card [leetcode_data]="data" ></app-leetcode-card>
+    <span class="leet-card" data-aos="fade-up" *ngFor="let data of leetcodeSubmissions">
+        <app-leetcode-card [leetcode_data]="data"></app-leetcode-card>
     </span>
 
 </section>
 
 <section class="heatmap-section">
-    <span class="heatmapchart">
+    <span class="heatmapchart" data-aos="fade-up">
         <app-heatmap [zArray]="github" [title]="'Github Contributions Statistics'" *ngIf="isGithubFetched"></app-heatmap>
     </span>
 </section>
