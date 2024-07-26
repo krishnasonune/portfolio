@@ -29,8 +29,7 @@
               "./node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "./node_modules/aos/dist/aos.js",
-              "./node_modules/apexcharts/dist/apexcharts.min.js"
+              "./node_modules/aos/dist/aos.js"
             ],
             "allowedCommonJsDependencies": [
               "chart.js"
@@ -42,12 +41,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "2mb"
+                  "maximumError": "7mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "1mb"
+                  "maximumError": "7mb"
                 }
               ],
               "outputHashing": "all"

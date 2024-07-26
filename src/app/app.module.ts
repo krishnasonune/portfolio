@@ -22,7 +22,6 @@ import { TestimonialCardComponent } from './reusable-components/testimonial-card
 import { HttpClientModule } from '@angular/common/http';
 import { OpenSourceComponent } from './open-source/open-source.component';
 import { NgChartsModule } from 'ng2-charts';
-import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 import * as PlotlyJS from 'plotly.js-dist-min';
@@ -59,7 +58,6 @@ PlotlyModule.plotlyjs = PlotlyJS;
     HttpClientModule,
     CommonModule,
     NgChartsModule,
-    NgApexchartsModule,
     PlotlyModule,
     routing
   ],
