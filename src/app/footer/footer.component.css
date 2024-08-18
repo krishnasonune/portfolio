@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
+:host{
+    --bg-color: #3F72AF;
+    --light-bg:rgb(215, 231, 238);
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: rgb(0, 28, 85);
+}
+
+.footer-text{
+    text-align: center;
+    color: var(--anim-color);
+    background-color: var(--light-bg);
+    font-family: 'Sansita Swashed', cursive;
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 1px black;
+    opacity: 0.9;
+}
+
+.heart{
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .footer-text{
+        font-size: 2.3rem;
+    }
+
+    .heart{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    .footer-text{
+        font-size: 2.2rem;
+    }
+
+    .heart{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer-text{
+        font-size: 2rem;
+    }
+
+    .heart{
+        font-size: 1.6rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    .footer-text{
+        font-size: 1.9rem;
+    }
+
+    .heart{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .footer-text{
+        font-size: 1.8rem;
+    }
+
+    .heart{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .footer-text{
+        font-size: 1.4rem;
+    }
+
+    .heart{
+        font-size: 1.2rem;
+    }
+}

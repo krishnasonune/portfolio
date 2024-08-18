@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host {
+    --bg-color: #3F72AF;
+    --light-bg:rgb(215, 231, 238);
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: rgb(0, 28, 85);
+    --svg-color: #0569A8
+}
+
+.experience {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    font-family: 'Hind', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--btn-color);
+}
+
+.experience-image-box {
+    width: 48%;
+}
+
+.experience-image {
+    width: 100%;
+    padding: 2rem;
+}
+
+.blend{
+    mix-blend-mode: color-burn;
+}
+
+.experience-text-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.experience-title {
+    font-size: 5rem;
+}
+
+.experience-subtitle {
+    font-size: 3rem;
+}
+
+
+.experience-details {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.work-details {
+    padding: 1rem 2rem;
+    font-family: 'Hind', sans-serif;
+    background-color: var(--light-bg);
+}
+
+.detail {
+    border: 1px solid cadetblue;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.detail>.sum {
+    list-style: none;
+}
+
+.detail>.sum::after {
+    content: "+";
+    position: absolute;
+    right: 2%;
+}
+
+.detail[open] {
+    border-bottom: none;
+}
+
+.detail[open]>.sum::after {
+    content: "-";
+}
+
+@media screen and (max-width: 1200px) {
+
+    .experience {
+        padding: 3rem;
+    }
+
+    .experience-text-content {
+        width: 50%;
+    }
+
+    .experience-title {
+        font-size: 4rem;
+    }
+
+    .experience-subtitle {
+        font-size: 2.8rem;
+    }
+
+    .experience-details {
+        font-size: 2.2rem;
+    }
+
+    .work-details {
+        padding: 0.7rem 2rem;
+    }
+
+    .detail {
+        font-size: 2rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .experience {
+        flex-direction: column;
+        gap: 1rem 0;
+    }
+
+    .experience-image-box {
+        width: 60%;
+    }
+
+    .experience-text-content {
+        width: 70%;
+        gap: 0.5rem 0;
+    }
+
+    .work-details {
+        padding: 0.7rem 1.5rem;
+    }
+
+    .detail {
+        font-size: 1.9rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .experience {
+        padding: 1rem;
+    }
+
+    .experience-image-box {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .experience-text-content {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .experience-title {
+        font-size: 3.5rem;
+    }
+
+    .experience-subtitle {
+        font-size: 2.5rem;
+    }
+
+    .experience-details {
+        font-size: 2rem;
+    }
+
+    .work-details {
+        padding: 0.7rem 2rem;
+    }
+
+    .detail {
+        font-size: 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .detail>.sum::after {
+        right: 2.5%;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    .experience-image-box {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .experience-text-content {
+        width: 90%;
+        padding: 0.5rem;
+    }
+
+    .experience-title {
+        font-size: 3rem;
+    }
+
+    .experience-subtitle {
+        font-size: 2.2rem;
+    }
+
+    .experience-details {
+        font-size: 1.9rem;
+    }
+
+    .work-details {
+        padding: 0.8rem 1.7rem;
+    }
+
+    .detail {
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .detail>.sum::after {
+        right: 3.5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .experience-image-box {
+        width: 100%;
+        padding: 0;
+    }
+
+    .experience-text-content {
+        width: 100%;
+    }
+
+    .experience-title {
+        font-size: 2.8rem;
+    }
+
+    .experience-subtitle {
+        font-size: 2rem;
+    }
+
+    .experience-details {
+        font-size: 1.8rem;
+    }
+
+    .work-details {
+        padding: 0.8rem 1rem;
+    }
+
+    .detail {
+        font-size: 1.7rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .detail>.sum::after {
+        right: 4%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .experience-title {
+        font-size: 1.8rem;
+    }
+
+    .experience-subtitle {
+        font-size: 1.4rem;
+    }
+
+
+    .experience-details {
+        font-size: 1.2rem;
+    }
+
+    .experience-title {
+        font-size: 2.6rem;
+    }
+
+    .experience-subtitle {
+        font-size: 1.9rem;
+    }
+
+    .experience-details {
+        font-size: 1.5rem;
+    }
+
+    .detail {
+        font-size: 1.6rem;
+    }
+
+    .detail>.sum::after {
+        right: 4%;
+    }
+}

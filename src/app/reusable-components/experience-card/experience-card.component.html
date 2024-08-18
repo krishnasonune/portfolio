@@ -1,0 +1,23 @@
+<section class="experience-card">
+    <span class="image-box">
+        <span *ngIf="detail?.isSVG;else pngBlock">
+            <img src="assets/skills_icons/{{detail?.url}}.svg"
+            class="experience-image" alt="loading....">
+        </span>
+    </span>
+
+    <span class="text-content-box">
+        <h2 class="work-place">{{detail?.company}}</h2>
+        <h3 class="designation">{{detail?.designation}}</h3>
+        <p class="job-description">{{detail?.description}}</p>
+    </span>
+    <span class="period-content-box">
+        <h2 class="period">{{detail?.period}}</h2>
+        <h3 class="place">{{detail?.place}}</h3>
+    </span>
+</section>
+
+<ng-template #pngBlock>
+    <img src="assets/skills_icons/{{detail?.url}}.png"
+        class="experience-image blend" alt="loading....">
+</ng-template>

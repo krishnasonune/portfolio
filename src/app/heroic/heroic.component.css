@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host{
+    --bg-color: #3F72AF;
+    --light-bg:rgb(215, 231, 238);
+    /* --light-bg:rgb(237, 249, 254); */
+    --color: #F8F8F7;
+    --anim-color: #112D4E;
+    /* --btn-color: #0F4C75; */
+    --btn-color: rgb(0, 28, 85);
+    --svg-color: #0569A8
+}
+
+.heroic-section{
+    display: flex;
+    background-color: var(--light-bg);
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.text-content{
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem 0;
+    padding: 1rem 1rem;
+    width: 55%;
+}
+
+.heroic-name, .anim-text{
+    color: var(--anim-color);
+    font-size: 4.7rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.anim-text{
+    color: var(--btn-color);
+}
+
+
+.cursor{
+    font-size: 4rem;
+    animation: blink 0.5s ease-in infinite normal;
+}
+
+
+.social-media{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0 .7rem;
+}
+
+.media{
+    width: 4.5rem;
+    cursor: pointer;
+}
+
+.follow-github{
+    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--btn-color);
+    color: var(--color);
+    padding: 1.3rem 1.3rem;
+    border: 1px solid var(--btn-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.follow-github:hover{
+    color: var(--btn-color);
+    background-color: var(--color);
+}
+
+.heroic-image-box{
+    width: 45%;
+}
+
+.heroic-image, .about-image{
+    width: 100%;
+    padding: 2.2rem;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.heading{
+    text-align: center;
+    font-size: 2.3rem;
+    padding: 3rem 1rem;
+    /* background-color: var(--color); */
+    background-color: var(--light-bg);
+    color: var(--btn-color);
+    font-family: 'Hind', sans-serif;
+    font-weight: 900;
+}
+
+
+.what_i_do{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: var(--color); */
+    background-color: var(--light-bg);
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.about-image-box{
+    width: 48%;
+    padding: 1rem 1rem;
+}
+
+.about-image{
+    padding: 1rem;
+}
+
+.about-me{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 0;
+    width: 50%;
+    padding: 1rem 1rem;
+}
+
+.about-heading{
+    font-size: 5rem;
+    font-family: 'Hind', sans-serif;
+    font-weight: 900;
+    color: var(--btn-color);
+}
+
+.what_i_do.back .about-heading{
+    color: var(--anim-color);
+}
+
+.skill-set{
+    display: flex;
+    gap: 0.4rem;
+}
+
+.skill{
+    width: 6rem;
+}
+
+.about-me-details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem 0;
+}
+
+.points{
+    font-size: 2rem;
+    color: var(--btn-color);
+    opacity: 0.8;
+    font-family: 'Hind', sans-serif;
+    font-weight: 600;   
+}
+
+.what_i_do.back .points{
+    color: var(--btn-color);
+}
+
+@media screen and (max-width: 1200px) {
+    .text-content{
+        width: 60%;
+    }
+
+    .heroic-name, .anim-text{
+        font-size: 3.9rem;
+    }
+
+    .cursor{
+        font-size: 3rem;
+    }
+
+    .follow-github{
+        font-size: 1.5rem;
+    }
+
+    .media{
+        width: 4rem;
+    }
+
+    .about-heading{
+        font-size: 4.5rem;
+    }
+
+    .skill{
+        width: 5.5rem;
+    }
+
+    .points{
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .heroic-section{
+        flex-direction: column;
+        gap: 2rem 0;
+    }
+
+    .text-content{
+        margin: 8rem 0 0 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .heroic-name, .anim-text{
+        font-size: 4.5rem;
+    }
+
+    .media{
+        width: 5rem;
+    }
+
+    .cursor{
+        font-size: 3.5rem;
+    }
+
+    .follow-github{
+        font-size: 1.5rem;
+    }
+
+    .heroic-image-box{
+        width: 60%;
+    }
+
+    .heroic-image{
+        padding: 2rem;
+    }
+
+    .heading{
+        padding: 1rem 0;
+    }
+
+    .what_i_do{
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem 0;
+    }
+
+    .what_i_do.back{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem 0;
+    }
+
+    .about-me{
+        width: 80%;
+    }
+
+    .about-image-box{
+        width: 70%;
+    }
+
+    .skill{
+        width: 6rem;
+    }
+
+    .points{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    .heroic-name, .anim-text{
+        font-size: 4rem;
+    }
+
+    .media{
+        width: 4.7rem;
+    }
+
+    .follow-github{
+        padding: 1.2rem;
+    }
+
+    .heroic-image-box{
+        width: 80%;
+    }
+
+    .heroic-image{
+        padding: 1rem;
+    }
+
+    .about-image-box{
+        width: 80%;
+    }
+
+    .about-image{
+        padding: 0.5rem;
+    }
+
+    .about-me{
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .about-heading{
+        font-size: 4rem;
+    }
+
+    .skill-set{
+        gap: 0.7rem;
+    }
+
+    .skill{
+        width: 5.5rem;
+    }
+
+    .points{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 576px) {
+
+    .heroic-section{
+        padding: 1rem;
+    }
+
+    .text-content{
+        padding: 0.3rem;
+    }
+    .heroic-name, .anim-text{
+        font-size: 2.9rem;
+    }
+
+    .cursor{
+        font-size: 2.5rem;
+    }
+
+    .media{
+        width: 4.4rem;
+    }
+
+    .follow-github{
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+
+    .heroic-image-box{
+        width: 85%;
+    }
+
+    .heading{
+        font-size: 1.8rem;
+    }
+
+    .what_i_do{
+        padding: 0.7rem;
+    }
+
+    .about-me{
+        gap: 0.5rem 0;
+    }
+
+    .about-image-box{
+        width: 100%;
+    }
+
+    .about-heading{
+        font-size: 3.3rem;
+    }
+
+    .skill-set{
+        gap: 0.4rem;
+    }
+
+    .skill{
+        width: 4.9rem;
+    }
+
+    .about-me-details{
+        gap: 0.5rem 0;
+    }
+
+    .points{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .heroic-section{
+        padding: 1rem 0.5rem;
+    }
+
+    .text-content{
+        padding: 0.3rem;
+    }
+    .heroic-name, .anim-text{
+        font-size: 2.15rem;
+    }
+
+    .cursor{
+        font-size: 2rem;
+    }
+
+    .media{
+        width: 4rem;
+    }
+
+    .follow-github{
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+
+    .heroic-image-box{
+        width: 90%;
+    }
+
+    .what_i_do{
+        gap: 0.8rem 0;
+    }
+
+    .about-heading{
+        font-size: 2.6rem;
+    }
+
+    .skill{
+        width: 4rem;
+    }
+
+    .points{
+        font-size: 1.6rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .heroic-section{
+        padding: 1rem 0.3rem;
+    }
+
+    .text-content{
+        padding: 0.3rem;
+    }
+    .heroic-name, .anim-text{
+        font-size: 1.9rem;
+    }
+
+    .cursor{
+        font-size: 1.7rem;
+    }
+
+    .media{
+        width: 3.5rem;
+    }
+
+    .follow-github{
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .heroic-image-box{
+        width: 95%;
+    }
+
+    .about-heading{
+        font-size: 2.3rem;
+    }
+
+    .skill{
+        width: 3.3rem;
+    }
+
+    .points{
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
+:host {
+    --card-color: #a6e1fa;
+    --color: #F8F8F7;
+    --card-hover-color: #334c63;
+    --card-text-color: #1c365c;
+    --max-lines: 3;
+}
+
+.modal-section {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    font-family: 'Hind', sans-serif;
+    color: var(--card-text-color);
+    filter: drop-shadow(50px 50px 50px var(--card-hover-color));
+}
+
+.modal {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    background-color: var(--card-color);
+    transform: translate(-50%, -50%);
+}
+
+
+.close {
+    float: right;
+}
+
+.close-icon {
+    padding: 1.5rem 2.2rem;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 1rem 0;
+}
+
+.heading {
+    padding: 4rem 2rem 0 2rem;
+    font-size: 3rem;
+}
+
+.description {
+    padding: 2rem;
+    font-size: 2.3rem;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .modal {
+        width: 70%;
+    }
+
+    .close-icon {
+        padding: 1.5rem 2.2rem;
+    }
+
+    .text-content {
+        gap: 1rem 0;
+    }
+
+    .heading {
+        padding: 4rem 2rem 0 2rem;
+        font-size: 2.9rem;
+    }
+
+    .description {
+        padding: 2rem;
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .modal {
+        width: 80%;
+    }
+
+    .close-icon {
+        padding: 1.5rem 2.2rem;
+    }
+
+    .text-content {
+        gap: 1rem 0;
+    }
+
+    .heading {
+        padding: 4rem 2rem 0 2rem;
+        font-size: 2.7rem;
+    }
+
+    .description {
+        padding: 2rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .modal {
+        width: 90%;
+    }
+
+    .close-icon {
+        padding: 1.2rem 1.8rem;
+    }
+
+    .text-content {
+        gap: 0.8rem 0;
+    }
+
+    .heading {
+        padding: 3rem 1rem 0 1rem;
+        font-size: 2.6rem;
+    }
+
+    .description {
+        padding: 1rem;
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .modal {
+        width: 90%;
+    }
+
+    .close-icon {
+        padding: 1.2rem 1.8rem;
+    }
+
+    .text-content {
+        gap: 0.5rem 0;
+    }
+
+    .heading {
+        padding: 2rem 1.2rem 0 1.2rem;
+        font-size: 2.5rem;
+    }
+
+    .description {
+        padding: 1.2rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .modal {
+        width: 90%;
+    }
+
+    .close-icon {
+        padding: 1rem 1.4rem;
+    }
+
+    .text-content {
+        gap: 0.5rem 0;
+    }
+
+    .heading {
+        padding: 2rem 1.2rem 0 1.2rem;
+        font-size: 2rem;
+    }
+
+    .description {
+        padding: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 300px) {}
+
+@media screen and (max-width: 200px) {}
