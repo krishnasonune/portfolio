@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "ghbuild": "ng build --base-href 'https://krishnasonune.github.io.portfolio/'",
+    "ghbuild": "ng build --base-href 'https://krishnasonune.github.io/portfolio/'",
     "ghpublish": "ngh --dir dist/portfolio"
   },
   "private": true,

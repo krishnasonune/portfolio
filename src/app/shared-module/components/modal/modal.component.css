@@ -19,7 +19,7 @@
 
 .modal {
     position: fixed;
-    top: 45%;
+    top: 50%;
     left: 50%;
     background-color: var(--card-color);
     transform: translate(-50%, -50%);
