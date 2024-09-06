@@ -84,7 +84,7 @@
 
 .repository:hover{
     color: var(--btn-color);
-    background-color: var(--color);
+    background-color: transparent;
 }
 
 @media screen and (max-width: 1200px) {

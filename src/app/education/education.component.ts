@@ -39,39 +39,49 @@ export class EducationComponent {
 
   certifications: certification[] = [
     {
-      url: "Infosys",
-      subject: "C# Certified Develoepr",
-      source: "Infosys Ltd"
+      url: "docker",
+      subject: "Docker for Beginners",
+      source: "Coursera"
     },
-
     {
-      url: "Infosys",
+      url: "docker",
+      subject: "Docker Containerization",
+      source: "Coursera"
+    },
+    {
+      url: "angularjs",
       subject: "Angular Certified Develoepr",
       source: "Infosys Ltd"
     },
-
     {
-      url: "Infosys",
-      subject: "Global Agile Develoepr",
+      url: "csharp",
+      subject: "C# Certified Develoepr",
       source: "Infosys Ltd"
     },
-
+    {
+      url: "csharp",
+      subject: "C# Certified Developer",
+      source: "HackerRank"
+    },
+    {
+      url: "aws",
+      subject: "Cloud Computing",
+      source: "Birlasoft"
+    },
+    {
+      url: "oracle",
+      subject: "SQL Developer",
+      source: "HackerRank"
+    },
     {
       url: "hackerrank",
       subject: "Problem Solving Skills",
       source: "HackerRank"
     },
-
     {
-      url: "hackerrank",
-      subject: "C# Certified Developer",
-      source: "HackerRank"
-    },
-
-    {
-      url: "hackerrank",
-      subject: "SQL Developer",
-      source: "HackerRank"
+      url: "Infosys",
+      subject: "Global Agile Develoepr",
+      source: "Infosys Ltd"
     }
   ]
 

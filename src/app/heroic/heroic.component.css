@@ -71,7 +71,7 @@
 
 .follow-github:hover{
     color: var(--btn-color);
-    background-color: var(--color);
+    background-color: transparent;
 }
 
 .heroic-image-box{
