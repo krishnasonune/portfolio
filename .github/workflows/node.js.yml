@@ -32,9 +32,13 @@ jobs:
     - name: Installing Modules
       run: npm install --legacy-peer-deps
 
-    - name: Build Static Files of Angular project
-      env:
-        GH_TOKEN: ${{ secrets.PORT_TOKEN }}
-      run: |
-        npm run ghbuild
-        npm run ghpublish
+    - name: App Build
+      run: npm run ghbuild
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        ACCESS_TOKEN: ${{ secrets.PORT_TOKEN }}
+        BASE_BRANCH: Master
+        BRANCH: gh_pages
+        FOLDER: dist/portfolio
