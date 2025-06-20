@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "ghbuild": "ng build --base-href 'https://krishnasonune.github.io/portfolio/'",
-    "ghpublish": "ngh --dir dist/portfolio"
+    "ghpublish": "ngh --dir dist/portfolio",
+    "ngsetup": "npm i -g @angular/cli@18.2.13"
   },
   "private": true,
   "dependencies": {
