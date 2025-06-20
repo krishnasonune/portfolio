@@ -25,8 +25,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm run ngsetup
-    - run: npm install --force
-    - run: npm run build
-    - run: npm run ghbuild
-    - run: npm run ghpublish
+  
+    - name: Setup Angular Environment
+      run: npm run ngsetup
+
+    - name: Installing Modules
+      run: npm install --legacy-peer-deps
+
+    - name: Build Static Files of Angular project
+      run: npm run ghbuild
+
+
+    - name: Build Static Files of Angular project
+      env:
+        GH_TOKEN: ${{ secrets.port_token }}
+      run: npm run ghpublish
