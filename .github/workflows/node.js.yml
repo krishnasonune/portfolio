@@ -35,5 +35,6 @@ jobs:
     - name: Build Static Files of Angular project
       env:
         GH_TOKEN: ${{ secrets.PORT_TOKEN }}
-      run: npm run ghbuild
-      run: npm run ghpublish
+      run: |
+        npm run ghbuild
+        npm run ghpublish
