@@ -32,13 +32,15 @@ jobs:
     - name: Installing Modules
       run: npm install --legacy-peer-deps
 
-    - name: App Build
-      run: npm run ghbuild
+    - name: App Build & publish
+      run: |
+        npm run ghbuild
+        npm run ghpublish
 
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        ACCESS_TOKEN: ${{ secrets.PORT_TOKEN }}
-        BASE_BRANCH: Master
-        BRANCH: gh_pages
-        FOLDER: dist/portfolio
+    # - name: Deploy 🚀
+    #   uses: JamesIves/github-pages-deploy-action@v4
+    #   with:
+    #     ACCESS_TOKEN: ${{ secrets.PORT_TOKEN }}
+    #     BASE_BRANCH: Master
+    #     BRANCH: gh_pages
+    #     FOLDER: dist/portfolio
