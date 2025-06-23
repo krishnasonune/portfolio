@@ -33,8 +33,9 @@ jobs:
       run: npm install --legacy-peer-deps
 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-          ACCESS_TOKEN: ${{ secrets.PORT_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist/portfolio # Replace with your actual build output folder name
+      env : 
+        GITHUB_TOKEN: ${{ secrets.PORTFOLIO_TOKEN }}
+
+      run: |
+          npm run ghbuild
+          npm run ghpublish

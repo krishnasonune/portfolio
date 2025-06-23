@@ -15,7 +15,7 @@ export class EducationComponent {
     {
       degree_from : "University Of Mumbai, India",
       degree_title : "Master's in Computer Application",
-      degree_period : "2022-2024",
+      degree_period : "2022-2025",
       degree_description : [
         "Studied Advanced Web concepts like client-server side Architecture using Dot net Core",
         "Learned Advanced Database Management Systems using SQL Server, MongoDB & Postgres",
