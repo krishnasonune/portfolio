@@ -24,18 +24,15 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-  
-    - name: Setup Angular Environment
-      run: npm run ngsetup
 
     - name: Installing Modules
       run: npm install --legacy-peer-deps
 
-    - name: Deploy to GitHub Pages
-      env : 
-        GITHUB_TOKEN: ${{ secrets.PORTFOLIO_TOKEN }}
+    - name: 🔨 Build Angular app
+      run: npm run ghbuild
 
-      run: |
-          npm run ghbuild
-          npm run ghpublish
+    - name: 🚀 Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages
+        folder: dist/portfolio 
