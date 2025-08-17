@@ -10,12 +10,21 @@ import * as Aos from 'aos';
 export class ExperienceComponent {
   work_details : experience[] = [
     {
+      url: "capgemini",
+      company: "Capgemini",
+      designation: "Lead Software Engineer",
+      period: "Jun 2025 - till now",
+      place: "Mumbai, India",
+      description: "Currently working as a Lead Software Engineer for U.S based Client to enhance their product funcionality by collaborating with internal & external teams and suggesting optimize solutions to deliever the best product",
+      isSVG : true,
+    },
+    {
       url: "Birlasoft",
       company: "BirlaSoft",
       designation: "Technical Specialist",
-      period: "Feb 2024 - till now",
+      period: "Feb 2024 - May 2025",
       place: "Mumbai, India",
-      description: "Currently experimenting with various technologies to enhance system efficiency by considering each usecase that fits best for the system, at the same time evaluting the current system to resolve bottleneck's & trying to come up with best ideas to make system more reliable by keeping up to its top performance",
+      description: "Worked with various technologies to enhance system efficiency by considering each usecase that fits best for the system, at the same time evaluting the current system to resolve bottleneck's & trying to come up with best ideas to make system more reliable by keeping up to its top performance",
       isSVG : true,
     },
     {
